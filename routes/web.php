@@ -32,6 +32,13 @@ use Illuminate\Support\Facades\Route;
 //route :: get('/contact/{id}', function ($id) {
 //    return "contact" .$id;
 //});
-route :: get('/apa/{id}', function ($id) {
-    return view('user', ['id' => $id]);
+route :: get('/users', function () {
+    $data = [
+        ['name' => 'fazri', 'age' => 16, 'kelamin' => 'laki-laki'],
+        ['name' => 'zahid', 'age' => 1, 'kelamin' => 'laki-laki'],
+    ];
+    return view('user', ['user' => $data]);
+});
+route :: get('/detail/{nama}', function () {
+    return view('detail');
 });
